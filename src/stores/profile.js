@@ -4,7 +4,7 @@ export const useProfileStore = defineStore('profile', () => {
 
     let profile = {
         'name': 'Andrii Trofimuk',
-        'img': '/src/assets/img/profile.gif',
+        'img': './img/profile.gif',
         'socials': [
             {
                 'icon': 'linkedin',
