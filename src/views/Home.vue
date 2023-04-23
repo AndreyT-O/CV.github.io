@@ -107,7 +107,7 @@
 		--margin-inner: 20px;
 		--margin-head: 20px;
 		--gap-body: 10px;
-		--size-icon: 25px;
+		--size-icon: 20px;
 		display: flex;
 		flex-direction: column;
 		@include row-gap($gap: 30px);
@@ -177,7 +177,8 @@
 	}
 	@include min(380px) {
 		.home {
-			--font-title: 24px;			
+			--font-title: 24px;		
+			--size-icon: 25px;	
 		}
 	}
 

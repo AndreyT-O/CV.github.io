@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
     .header {
-        --height: 40px;
+        --height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -22,6 +22,11 @@
         .header {
             justify-content: flex-end;
             padding-right: 15px;
+        }
+    }
+    @include min(1360px) {
+        .header {
+            --height: 40px;
         }
     }
 </style>

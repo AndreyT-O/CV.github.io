@@ -38,10 +38,10 @@
 <style lang="scss" scoped>
 	.sidebar {
     	--standart-color: #fff;
-		--size-profile: 70px;
+		--size-profile: 90px;
 		--font-profile: 22px;
 		--size-icon: 20px;
-		padding: 10px;
+		padding: 30px 10px 10px 10px;
 		background-color: $dark;
 		&__profile {
 			display: flex;

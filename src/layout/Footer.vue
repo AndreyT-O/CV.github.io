@@ -22,9 +22,9 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        @include row-gap($gap: 10px);
+        @include row-gap($gap: 15px);
         width: 100%;
-        padding: 10px 0;
+        padding: 20px 0;
         background-color: #f3f3ed;
         &__date {
             font-size: var(--font-size);

@@ -25,6 +25,9 @@
         align-items: center;
         justify-content: center;
         @include column-gap($gap: 10px);
+        &__link {
+            display: block;
+        }
     }
     @include min(992px) {
         .socials {

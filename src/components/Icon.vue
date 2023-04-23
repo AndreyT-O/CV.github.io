@@ -29,8 +29,18 @@
 
 <style lang="scss">
     .icon {
-        --size: 30px;
+        --size: 35px;
         width: var(--size);
         height: var(--size);
+    }
+    @include min(992px) {
+        .icon {
+            --size: 25px;
+        }
+    }
+    @include min(1200px) {
+        .icon {
+            --size: 30px;
+        }
     }
 </style>
