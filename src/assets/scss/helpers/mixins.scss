@@ -1,0 +1,145 @@
+@mixin column($count, $margin) {
+    width: col($count, $margin);
+    &:nth-child(n) {
+        margin-right: $margin;
+    }
+    &:nth-child(#{$count}n) {
+        margin-right: 0;
+    }
+}
+
+@mixin widthGap($count, $gap, $gapRow: null){
+    @if $gapRow {
+        column-gap: $gap;
+        row-gap: $gapRow;
+    } @else {
+        gap: #{$gap};
+    }
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+        @if $gapRow {
+            @include column-gap($count, $gap);
+            @include row-gap($count, $gapRow);
+        } @else {
+            @include column-gap($count, $gap);
+            @include row-gap($count, $gap);
+        }
+    }
+    &>*{
+        width: calc(100% / #{$count} - ((#{$gap} * (#{$count} - 1)) / #{$count}));
+    }
+}
+
+@mixin row-gap($column: none, $gap) {
+    row-gap: $gap;
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+        & > *:nth-child(n) {
+            margin-bottom: $gap;
+        }
+        @if $column != none {
+            & > *:nth-last-child(-n+#{$column}) {
+                margin-bottom: 0;
+            }
+        } @else {
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@mixin column-gap($column: none, $gap) {
+    column-gap: $gap;
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+        & > *:nth-child(n) {
+            margin-right: $gap;
+        }
+        @if $column != none {
+            & > *:nth-child(#{$column}n) {
+                margin-right: 0;
+            }
+        } @else {
+            & > *:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@mixin text-control($row: 5) {
+    -webkit-line-clamp: $row;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+@mixin scrollbar($thumb: #eee, $aria:#f9f9f9, $track: #fff, $widthScollbar: 5px) {
+    scrollbar-color: $thumb $aria;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar { width: $widthScollbar; height: 5px; }
+    &::-webkit-scrollbar-thumb { background-color: $thumb; border-radius: 5px; }
+    &::-webkit-scrollbar-button { height: 0px; width: 0px;}
+    &::-webkit-scrollbar-track-piece { background-color: $track;}
+}
+
+@mixin transition($elements, $time) {
+    will-change: $elements;
+    transition-property: $elements;
+    transition-duration: $time;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin position(
+    $position: absolute,
+    $top: 0,
+    $right: inherit,
+    $bottom: inherit,
+    $left: 0,
+    $width: 100%,
+    $height: 100%,
+    $objectFit: cover,
+    $zIndex: null) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    width: $width;
+    height: $height;
+    @if $objectFit {
+        object-fit: $objectFit;
+    }
+    @if $zIndex {
+        z-index: $zIndex;
+    }
+    @if $top == 50% or $left == 50% {
+        transform: translate(-$top, -$left);
+    }
+}
+
+@function w($width, $window) {
+    @return ($width * 100vw) / $window;
+}
+
+@function col($count, $margin) {
+    @return calc(100% / #{$count} - ((#{$margin} * #{$count}) - #{$margin}) / #{$count});
+}
+
+@mixin min($width) {
+    @media screen and (min-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin max($width) {
+    @media screen and (max-width: #{$width}) {
+        @content;
+    }
+}

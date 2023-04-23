@@ -1,0 +1,8 @@
+
+@import '@scss/base/reset.scss';
+@import '@scss/base/base.scss';
+@import '@scss/base/fonts.scss';
+
+body {
+    @include scrollbar($thumb: $brown, $track: #f3f3ed, $widthScollbar: 10px)
+}

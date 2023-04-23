@@ -1,0 +1,43 @@
+$dark: #313135;
+$gray-dark: #4F4F4F;
+$gray: #9A9A9A;
+$red: #FD291B;
+$green: #86a60d;
+$turquoise: #3DBFA8;
+$blue: #1972ff;
+$brown: #434345;
+
+:root {
+    --standart-color: #313135;
+    --standart-font-size: 14px;
+}
+
+@include min(380px) {
+    :root {
+        --standart-font-size: 22px;
+    }    
+}
+
+@include min(992px) {
+    :root {
+        --standart-font-size: 16px;
+    }    
+}
+
+@include min(1200px) {
+    :root {
+        --standart-font-size: 20px;
+    }    
+}
+
+@include min(1360px) {
+    :root {
+        --standart-font-size: 22px;
+    }    
+}
+
+@include min(1560px) {
+    :root {
+        --standart-font-size: 24px;
+    }    
+}
