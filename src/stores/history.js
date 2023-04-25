@@ -4,12 +4,12 @@ export const useHistoryStore = defineStore('history', () => {
 
     let history = {
         'about me': [
-            ['age', new Date(1997, 11, 3)],
-            ['residence', 'Lutsk, Ukraine'],
-            ['phone', '+(380) 95 35 94 732'],
-            ['email', 'trufikao@gmail.com'],
-            ['current job', 'front-end developer'],
             ['experience', 'developing, testing, supporting and debugging user interface'],
+            ['current job', 'front-end developer'],
+            ['email', 'trufikao@gmail.com'],
+            ['phone', '+(380) 95 35 94 732'],
+            ['residence', 'Lutsk, Ukraine'],
+            ['age', new Date(1997, 11, 3)],
             ['hobby', 'kickboxing, basketball, workout and running']
         ],
         'education': {

@@ -132,6 +132,7 @@
 		&__icon {
 			width: var(--size-icon);
 			height: var(--size-icon);
+			transform: translateY(-5px);
 		}
 		&__title {
 			display: block;

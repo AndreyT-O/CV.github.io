@@ -69,6 +69,7 @@
             border-radius: 4px;
             text-align: center;
             line-height: 1.3;
+            cursor: crosshair;
         }
     }
     @include min(992px) {
