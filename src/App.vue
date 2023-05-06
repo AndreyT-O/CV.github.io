@@ -5,7 +5,7 @@ import { defineAsyncComponent } from 'vue'
 const Main = defineAsyncComponent(() => new Promise(res => {
 	setTimeout(() => {
 		res(import('./layout/Main.vue'))
-	}, 2000);
+	}, 1000);
 }))
 
 import 'virtual:svg-icons-register'
@@ -34,6 +34,7 @@ const cursor = ref(null)
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);	
+	font-size: 30px;
 }
 
 .loading-enter-active,
@@ -44,5 +45,11 @@ const cursor = ref(null)
 .loading-enter-from,
 .loading-leave-to {
   opacity: 0;
+}
+
+@include min(1360px) {
+	.preload-info {
+		font-size: 50px;
+	}
 }
 </style>

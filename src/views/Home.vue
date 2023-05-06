@@ -88,6 +88,7 @@
 					</span>
 				</div>
 				<div class="home__body">
+					<span>Position: <span class="position">{{ item.position }}</span></span>
 					<p v-for="(text, index) of item.description" :key="index" class="home__text">
 						{{ text }}
 					</p>
@@ -169,6 +170,11 @@
 			display: flex;
 			flex-direction: column;
 			@include row-gap($gap: var(--gap-body));
+			.position {
+				text-decoration: underline;
+				text-decoration-style: dashed;
+				text-underline-offset: 5px;
+			}
 		}
 	}
 	@include min(380px) {
@@ -220,11 +226,19 @@
 					.home__name {
 						color: #86a60d;
 					}
+					.position {
+						text-decoration-color: $red;
+					}
 				}
 			}
 			&__name {
 				span {
 					color: inherit;
+				}
+			}
+			&__body {
+				.position {
+					@include transition(text-decoration-color, .3s)
 				}
 			}
 			&__title, &__name, &__first {
