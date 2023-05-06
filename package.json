@@ -12,6 +12,8 @@
   "dependencies": {
     "fast-glob": "^3.2.12",
     "gh-pages": "^5.0.0",
+    "magicmouse.js": "^1.2.1",
+    "moment": "^2.29.4",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-collapsed": "^1.1.2",

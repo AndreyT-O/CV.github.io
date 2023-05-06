@@ -15,7 +15,7 @@
 <template>
     <li>
         <button 
-            :class="['tools__button', {'active': isOpen}]" 
+            :class="['tools__button magic-hover magic-hover__square', {'active': isOpen}]" 
             @click="() => isOpen = !isOpen">
             <span class="tools__text">{{ props.name }}</span>
             <Icon name="plus" class="tools__icon" :resize="true"></Icon>

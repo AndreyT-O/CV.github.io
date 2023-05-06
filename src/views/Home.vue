@@ -2,6 +2,8 @@
 	import { useHistoryStore } from '@/stores/history';
 	import { onMounted, ref } from 'vue';
 
+	import moment from 'moment';
+
 	import Icon from '../components/Icon.vue';
 
 	const parent = ref(null);
@@ -14,27 +16,21 @@
 		
 		secondDate = secondDate ? secondDate : new Date();
 
-        let count, currentYear, currentMonth;
+		const diff = moment(secondDate).diff(moment(firstDate), 'days');
 
-		count = (secondDate.getFullYear() - firstDate.getFullYear()) * 12;
-		count -= firstDate.getMonth() + 1;
-		count += secondDate.getMonth();
+		const years = Math.floor(diff / 365);
+		const months = Math.floor((diff % 365) / 30);
+		const days = diff % 30;
 
-        currentYear = Math.floor(count / 12);
-        currentMonth = count % 12;
+		let str = '';
 
-        currentYear = currentYear < 1 ? '' : currentYear == 1 ? `${ currentYear } year` : `${ currentYear } years`;
-        currentMonth = currentMonth > 0 ? `${ currentMonth } month` : '';
+		if(years) str += `${years} years `;
+		if(months) str += `${months} months `;
+		if(days) str += `${days} days `;
 
-		switch (type) {
-			case 'years':
-			return `${currentYear}`;
-				break;
-		
-			default:
-				return `${currentYear} ${currentMonth}`;
-				break;
-		}
+		if(type == 'years') str = `${years} years `;
+
+		return str;
 	}
 
 	function checkValue(index, element) {
@@ -88,7 +84,7 @@
 						<Icon :name="item.icon" v-if="item.icon" class="home__icon"/>
 					</div>
 					<span class="home__date">
-						{{ monthDiff(item.startTime, item.endTime) }}
+						{{ monthDiff(item.startTime, item.endTime) }} 
 					</span>
 				</div>
 				<div class="home__body">
@@ -117,7 +113,7 @@
 			flex-direction: column;
 			&-name {
 				display: flex;
-				align-items: center;
+				align-items: flex-end;
 				@include column-gap($gap: 10px);
 			}
 			&--list {
@@ -132,7 +128,6 @@
 		&__icon {
 			width: var(--size-icon);
 			height: var(--size-icon);
-			transform: translateY(-5px);
 		}
 		&__title {
 			display: block;

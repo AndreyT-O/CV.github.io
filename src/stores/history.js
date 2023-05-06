@@ -36,10 +36,23 @@ export const useHistoryStore = defineStore('history', () => {
                 'icon': 'webmaestro',
                 'position': 'Front-end developer',
                 'startTime': new Date(2020, 10, 1),
+                'endTime': new Date(2023, 5, 25),
                 'description': [
                     'Developing and supporting websites.',
                     'Experience is updating, testing and layout websites.',
                     'Layouts type of websites: eCommerce, Business, Portfolio.'
+                ],
+                'city': 'Lutsk'
+            },
+            {
+                'company': 'Web studio "DOMINO"',
+                'icon': 'domino',
+                'position': 'Vue developer',
+                'startTime': new Date(2023, 3, 26),
+                'description': [
+                    'Developing websites on framework Vue.',
+                    'Experience is updating, testing and layout websites.',
+                    'Layouts type of websites: eCommerce, CRM'
                 ],
                 'city': 'Lutsk'
             }

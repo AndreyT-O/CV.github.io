@@ -6,3 +6,7 @@
 body {
     @include scrollbar($thumb: $brown, $track: #f3f3ed, $widthScollbar: 10px)
 }
+
+html,* { cursor: none!important; }  
+
+#magicMouseCursor { border-width: 2px!important;}
