@@ -4,16 +4,14 @@ export const useTechnologyStore = defineStore('technology', () => {
 
     let technology = {
         'front-end': [
-            'HTML (BEM, Mobile first)', 'JS Native', 'Vue 3 (composition)', 'React (composition)', 'CSS', 'SCSS', 'Less' 
+            'HTML (BEM, Mobile first)', 'JS (Vanilla js)', 'Vue 3 (Nuxt.js)', 'React (Next.js)', 'CSS (SASS, LESS)', 
+            'Tanstack query (Vue3, React)', 'Graphql (Apollo Graphql)', 'Laravel Blade' 
         ],
         'back-end': [
-            'Node.js', 'Express.js', 'Nuxt.js'
+            'Node.js', 'Express.js'
         ],
         'framework': [
-            'Laravel', 'Vue 3'
-        ],
-        'module builder': [
-            'webpack (laravel)', 'gulp', 'vite'
+            'Laravel', 'Vue 3', 'Nuxt.js', 'Next.js'
         ],
         'layout email': [
             'ZUBR Foundation'
@@ -23,9 +21,6 @@ export const useTechnologyStore = defineStore('technology', () => {
         ],
         'web services': [
             'Github', 'Bitbucket'
-        ],
-        'version controll system': [
-            'git (git flow)'
         ],
         'source code editor': [
             'VS Code', 'PhpStorm'
